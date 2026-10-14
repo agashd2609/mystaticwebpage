@@ -1,10 +1,5 @@
 #!/bin/bash
- echo "Deployment started..."
- 
- # Optional: make sure permissions are good
- chmod -R 755 /var/www/html
- 
- # Optional: restart Nginx if needed
- systemctl restart nginx
- 
- echo "Deployment finished!"
+apt-get update -y
+apt-get install -y nginx
+cp /home/ubuntu/sample-website/*.html /var/www/html/
+systemctl restart nginx
